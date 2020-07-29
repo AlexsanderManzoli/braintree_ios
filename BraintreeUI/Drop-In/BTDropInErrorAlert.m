@@ -67,7 +67,7 @@
             NSString *localizedTryAgain = BTDropInLocalizedString(ERROR_ALERT_TRY_AGAIN_BUTTON_TEXT);
             [alertView addButtonWithTitle:localizedTryAgain];
         }
-        
+
         [alertView show];
 #pragma clang diagnostic pop
     }
@@ -76,14 +76,6 @@
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
 
-- (void)alertView:(__unused UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-    if (buttonIndex == 0 && self.cancelBlock) {
-        self.cancelBlock();
-    } else if (buttonIndex == 1 && self.retryBlock) {
-        self.retryBlock();
-    }
-    self.dismissalHandler();
-}
 #pragma clang diagnostic pop
 
 - (NSString *)title {
